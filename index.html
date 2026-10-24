@@ -202,6 +202,7 @@ body.simple .legal,body.simple .count{font-family:var(--mono);letter-spacing:.02
   .top{height:56px}
   .legal{padding-top:8px}
 }
+.marque{margin:0 0 4px;font-family:"Figtree","Avenir Next",Arial,sans-serif;font-size:24px;font-weight:600;letter-spacing:-.04em;line-height:1;color:var(--ink)}
 </style>
 </head>
 <body>
@@ -516,6 +517,7 @@ const SCREENS = {
           ${sizes.map(([v,l])=>`<button class="pill" data-action="size" data-v="${v}" aria-pressed="${state.scale===v}"><span style="font-size:${Math.round(16*v)}px">A</span> ${l}</button>`).join("")}
         </div></div>
       </div>
+      <p class="marque">Ludo.</p>
       <div class="home-art">${HOME_ART}</div>
       <h1 class="title">Invente une histoire d'Halloween</h1>
       <ul class="steps">
@@ -530,7 +532,7 @@ const SCREENS = {
         : `<button class="btn primary" data-action="start">Commencer</button>`}
     </footer>
     <div class="legal">Version 2.0<br>Application produite par IA à partir d'un document Internet (unjourunjeu.fr). Des erreurs peuvent survenir.<br>
-    Application développée par Claude AI sous la supervision de Ludo<b style="font-weight:700;font-size:1.35em;line-height:0">.</b> (@rprof_1).<br>
+    Application développée par Claude AI sous la supervision de Ludo<b style="font-weight:700;font-size:1.35em;line-height:0">.</b> (@rprof_1) · <a href="https://rprof1.com" target="_blank" rel="noopener" style="color:inherit">rprof1.com</a>.<br>
     Licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank" rel="noopener" style="color:inherit">CC BY-NC-SA 4.0</a></div>`;
   },
   roll(){
