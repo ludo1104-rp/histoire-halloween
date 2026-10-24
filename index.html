@@ -202,7 +202,7 @@ body.simple .legal,body.simple .count{font-family:var(--mono);letter-spacing:.02
   .top{height:56px}
   .legal{padding-top:8px}
 }
-.marque{margin:0 0 4px;font-family:"Figtree","Avenir Next",Arial,sans-serif;font-size:24px;font-weight:600;letter-spacing:-.04em;line-height:1;color:var(--ink)}
+.marque{width:auto;min-width:56px;flex:none;font-family:"Figtree","Avenir Next",Arial,sans-serif;font-size:26px;font-weight:600;letter-spacing:-.04em;line-height:1;color:var(--ink);pointer-events:none}
 </style>
 </head>
 <body>
@@ -478,7 +478,7 @@ const words = t => t.trim().split(/\s+/).filter(Boolean).length;
    ÉCRANS
    ============================================================ */
 function header(progress){
-  const left = state.screen==="home" ? `<span class="spacer"></span>` :
+  const left = state.screen==="home" ? `<span class="marque">Ludo.</span>` :
     `<div class="left-btns"><button class="round" data-action="home" aria-label="Accueil">${I.home}</button><button class="round" data-action="back" aria-label="Retour">${I.back}</button></div>`;
   return `<header class="top">${left}<div class="progress">${progress?segments():""}</div>
     <button class="round" id="listen" data-action="listen" aria-label="Écouter">${I.speaker}</button></header>`;
@@ -517,7 +517,6 @@ const SCREENS = {
           ${sizes.map(([v,l])=>`<button class="pill" data-action="size" data-v="${v}" aria-pressed="${state.scale===v}"><span style="font-size:${Math.round(16*v)}px">A</span> ${l}</button>`).join("")}
         </div></div>
       </div>
-      <p class="marque">Ludo.</p>
       <div class="home-art">${HOME_ART}</div>
       <h1 class="title">Invente une histoire d'Halloween</h1>
       <ul class="steps">
